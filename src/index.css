@@ -1,0 +1,22 @@
+.logo{
+  width: 5rem
+}
+
+.bg-color{
+  background-color:#2c2c2c ;
+}
+
+.text-flix{
+  color: #e82c26;
+}
+
+.card{
+  width: 18rem;
+}
+.card:hover{
+  cursor: pointer;
+  border: 1px solid white;
+}
+.card-img-top{
+  height: 25rem;
+}
