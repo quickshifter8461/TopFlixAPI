@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import MovieList from "./MovieList";
+import Footer from "./Footer"
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -47,6 +48,7 @@ const MoviesPage = () => {
       <Header onLanguageChange={setLanguage} />
 
       <MovieList movies={movies} />
+      <Footer/>
     </>
   );
 };
