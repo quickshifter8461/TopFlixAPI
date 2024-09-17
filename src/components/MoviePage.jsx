@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import MovieList from "./MovieList";
 import Footer from "./Footer"
+import Shimmer from "../Shimmer";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -31,7 +32,6 @@ const MoviesPage = () => {
         rating: movie.vote_average,
         dateOfRelease : movie.release_date,
       }));
-
       setMovies(formattedMovies);
     } catch (error) {
       console.error("Error fetching movies:", error);
@@ -43,11 +43,11 @@ const MoviesPage = () => {
     fetchMovies(language);
   }, [language]);
 
-  return (
+  return  (
     <>
       <Header onLanguageChange={setLanguage} />
-
-      <MovieList movies={movies} />
+      {movies.length === 0 ? (<Shimmer/>): (<MovieList movies={movies} />) }
+      
       <Footer/>
     </>
   );
